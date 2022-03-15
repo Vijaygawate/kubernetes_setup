@@ -19,5 +19,10 @@ Step2::::::Create a route53 domain for your cluster
 go to route53 serves > create hosted zone 
 domain name = vijay-aws.tk 
 Create an S3 bucket to store your clusters state 
-#aws s3 mb s3://vijay.clusters.com
-#export KOPS_STATE_STORE=s3://vijay.clusters.com
+#aws s3 mb s3://vijay-aws1.tk
+#export KOPS_STATE_STORE=s3://vijay-aws1.tk
+Create the cluster in AWS
+#kops create cluster --cloud=aws --zones=ap-south-1b --name=vijay-aws1.tk --dns-zone=vijay-aws.tk --dns public
+Final creation of kops cluster 
+#kops update cluster --name vijay-aws1.tk --yes --admin
+
